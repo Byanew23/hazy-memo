@@ -1,0 +1,53 @@
+.username {
+  width: 175px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.content {
+  height: 100px;
+  width: 175px;
+  border: 1px solid black;
+  border-radius: 6px;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tags {
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 6px;
+  width: 175px;
+}
+
+.addButton {
+  align-self: center;
+  padding: 14px;
+  background-color: brown;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6px;
+}
