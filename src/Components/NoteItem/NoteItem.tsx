@@ -10,7 +10,7 @@ interface NoteType {
 export const Note = ({ note }: { note: NoteType }) => {
     const { username, content, likeCount, commCount } = note
     return <div className='note-wrapper'>
-        <span className='username'>{username}</span>
+        <span className='note-username'>{username}</span>
         <span className='note-content'>{content}</span>
         <div className="interactive">
             <span className='likes'><i className="far fa-heart"></i> <span className="like-counter">{likeCount}</span></span>
