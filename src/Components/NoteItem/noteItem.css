@@ -1,0 +1,33 @@
+.note-wrapper {
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 1px solid #3c3c3c;
+    border-radius: 0.3rem;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 5px 5px 5px 0 #a19f9f;
+    background: #cabf8e;
+}
+
+.username {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.note-content {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.interactive {
+    display: flex;
+    gap: 1rem;
+    width: fit-content;
+    margin: 1rem 2rem 0 auto;
+
+    &>span {
+        cursor: pointer;
+    }
+}

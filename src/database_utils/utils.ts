@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || ''
@@ -7,7 +6,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const getItems = async () => {
     const { data, error } = await supabase
-        .from('items')
+        .from('notes')
         .select('*');
 
     if (error) {
@@ -38,11 +37,11 @@ export const getItemById = async (id: string) => {
 
 export const uploadItem = async (values: any) => {
 
-    const { urls, name, description, price } = values
+    const { username, content, likes } = values
     const { data, error } = await supabase
-        .from('items')
+        .from('notes')
         .insert([
-            { 'urls': urls, 'name': name, 'description': description, 'price': price },
+            { username: username, content: content, likes: 0 },
         ])
         .select()
 
@@ -62,33 +61,3 @@ export const deleteItemById = async (id: string) => {
         .eq('id', id)
 
 }
-
-// export const useSupabaseData = () => {
-
-//     const uploadItem = async (values: glassesDataType) => {
-
-//         const { id, urls, name, description, price } = values
-//         const { data, error } = await supabase
-//             .from('items')
-//             .insert([
-//                 { 'id': id, 'urls': urls, 'name': name, 'description': description, 'price': price },
-//             ])
-
-
-//         if (error) {
-//             console.error('Error fetching data:', error.message);
-
-//         }
-//     }
-
-//     const deleteItem = async (id: string) => {
-
-//         const { error } = await supabase
-//             .from('items')
-//             .delete()
-//             .eq('id', id)
-
-//     }
-
-//     return { getData: getImages, upload: uploadItem }
-// }
