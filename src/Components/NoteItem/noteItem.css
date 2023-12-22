@@ -31,3 +31,11 @@
         cursor: pointer;
     }
 }
+
+.likes {
+    color: #ff0000;
+
+    &>span {
+        color: #000;
+    }
+}

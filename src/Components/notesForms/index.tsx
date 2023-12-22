@@ -1,16 +1,20 @@
 import { useState } from "react";
 import "./index.css";
+import { uploadItem } from "../../database_utils/utils";
 
-export const What = () => {
+export const NoteForm = ({ closeModal }: { closeModal: () => void }) => {
   const [username, setUsername] = useState("");
   const [content, setContent] = useState("");
   const [tags, setTags] = useState("");
 
   const handleSubmit = (event: React.MouseEvent) => {
     event.preventDefault();
-    console.log(username);
-    console.log(content, tags);
+    const parsedTags = tags.split(',').map(x => x.trim())
+    uploadItem({ username: username, content: content, tags: parsedTags })
+    closeModal()
+
   };
+
   return (
     <div className="formWrapper">
       <form>

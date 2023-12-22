@@ -37,11 +37,12 @@ export const getItemById = async (id: string) => {
 
 export const uploadItem = async (values: any) => {
 
-    const { username, content, likes } = values
+    const { username, content, tags } = values
+    console.log('Values:', values)
     const { data, error } = await supabase
         .from('notes')
         .insert([
-            { username: username, content: content, likes: 0 },
+            { author: username, content: content, likes: 0, tags: tags },
         ])
         .select()
 
